@@ -7,7 +7,7 @@ puts '--------------'
     username: Faker::Creature::Animal.name,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    phone_number: Faker::PhoneNumber.cell_phone
+    phone_number: Faker::PhoneNumber.cell_phone    open_id: rand(0..10)
   )
   user.save!
   puts "Created user #{user.first_name}"

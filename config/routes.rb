@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get '/spaces/user/:id', to: "spaces#show_user"
       get '/space/:id/review', to: "reviews#show_reviews"
       get '/bookings/:id', to: "bookings#show_bookings"
+      get '/user', to: "user#find_user"
     end
   end
 end
