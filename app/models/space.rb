@@ -5,6 +5,6 @@ class Space < ApplicationRecord
   validates :price, presence: true
   validates :city, presence: true
   validates :address, presence: true
-  validates :title, presence: true
+  validates :category, presence: true
   validates :description, presence: true, length: { minimum: 5 }
 end

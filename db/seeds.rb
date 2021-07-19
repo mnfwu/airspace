@@ -18,7 +18,7 @@ puts '******end******'
 puts 'Creating spaces'
 puts '---------------'
 20.times do
-  types = ['office', 'kitchen', 'event space']
+  categories = ['office', 'kitchen', 'event space']
   prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
   images = [
     'https://images.unsplash.com/photo-1592247350271-c5efb34dd967?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8aW50ZXJpb3J8fHx8fHwxNjI2Njc1OTY3&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
@@ -41,7 +41,7 @@ puts '---------------'
     'https://images.unsplash.com/photo-1562771335-b1fe8b4ea78f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjY2NzY1ODQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200'
   ]
   space = Space.new(
-    type: types.sample,
+    category: categories.sample,
     price: prices.sample,
     image_urls: [images.sample],
     city: Faker::Address.city,

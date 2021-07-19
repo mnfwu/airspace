@@ -1,7 +1,7 @@
 class CreateSpaces < ActiveRecord::Migration[6.0]
   def change
     create_table :spaces do |t|
-      t.string :type
+      t.string :category
       t.integer :price
       t.string :image_urls, array: true, default: []
       t.string :city
