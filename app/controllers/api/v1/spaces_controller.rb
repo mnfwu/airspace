@@ -30,6 +30,10 @@ class Api::V1::SpacesController < Api::V1::BaseController
 		@space.destroy
 	end
 
+	def show_spaces
+		@spaces = Space.where("user_id LIKE '#{params[:user_id]}'")
+	end
+
 	private 
 
 	def space_params
