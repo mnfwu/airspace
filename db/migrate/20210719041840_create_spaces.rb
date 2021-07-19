@@ -6,6 +6,7 @@ class CreateSpaces < ActiveRecord::Migration[6.0]
       t.string :image_urls, array: true, default: []
       t.string :city
       t.string :address
+      t.string :title
       t.text :description
       t.references :user, null: false, foreign_key: true
 

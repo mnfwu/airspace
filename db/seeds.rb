@@ -19,6 +19,35 @@ puts 'Creating Users'
   puts "Created user #{user.first_name}"
 end
 
+# spaces seed
+20.times do
+  space = Space.new(
+    type: ,
+    price: ,
+    image_urls: ,
+    city: ,
+    address: ,
+    title:  ,
+    description:  ,
+    user_id:
+  )
+  space.save!
+  puts "Created space #{space.title}"
+end
+
+      # t.string :type
+      # t.integer :price
+      # t.string :image_urls, array: true, default: []
+      # t.string :city
+      # t.string :address
+      # t.string :title
+      # t.text :description
+      # t.references :user, null: false, foreign_key: true
+
+# reviews seed (?)
+
+# bookings seed (?)
+
 # puts 'Creating 100 fake restaurants...'
 # 100.times do
 #   restaurant = Restaurant.new(
