@@ -15,6 +15,10 @@ class Api::V1::ReviewsController < Api::V1::BaseController
 		@review.destroy
 	end
 
+	def show_reviews
+		@reviews = Review.where("space_id LIKE '#{params[:space_id]}'")
+	end
+
 	private
 	def review_params
 		params.require(:review).permit(:content, :rating, :user_id, :space_id)
