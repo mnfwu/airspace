@@ -16,7 +16,7 @@ class Api::V1::BookingsController < Api::V1::BaseController
 		head :no_content
 	end
 
-	def show_bookings
+	def show_user_bookings
 		@bookings = Booking.where("user_id LIKE '#{params[:user_id]}'")
 	end
 
