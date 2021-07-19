@@ -1,0 +1,1 @@
+json.extract! @space, :id, :title, :city, :description, :price, :category, :image_urls, :user_id
