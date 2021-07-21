@@ -18,6 +18,10 @@ class Api::V1::BookingsController < Api::V1::BaseController
 
   def show_user_bookings
     @bookings = Booking.where("user_id = #{params[:user_id]}")
+    @spaces = []
+    @bookings.each do |booking|
+      @spaces << Space.find(booking.space_id)
+    end
   end
 
   private
