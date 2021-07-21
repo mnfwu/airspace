@@ -11,7 +11,7 @@ class Api::V1::SpacesController < Api::V1::BaseController
     @space = Space.new(space_params)
     # @space.save
     if @space.save
-      render :show, status: :created
+      render json: @space
     else
       render_error
     end
@@ -19,7 +19,7 @@ class Api::V1::SpacesController < Api::V1::BaseController
 
   def update
     if @space.update(space_params)
-      render :show
+      render json: @space
     else
       render_error
     end

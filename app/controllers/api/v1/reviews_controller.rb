@@ -5,7 +5,7 @@ class Api::V1::ReviewsController < Api::V1::BaseController
     @review = Review.new(review_params)
     # @review.save
     if @review.save
-      render :show, status: :created
+      render json: @review
     else
       render_error
     end

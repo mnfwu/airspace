@@ -5,7 +5,7 @@ class Api::V1::BookingsController < Api::V1::BaseController
     @booking = Booking.new(booking_params)
     # @booking.save
     if @booking.save
-      render :show, status: :created
+      render json: @booking
     else
       render_error
     end
@@ -22,7 +22,7 @@ class Api::V1::BookingsController < Api::V1::BaseController
 
   private
 
-  def space_params
+  def booking_params
     params.require(:booking).permit(:start_date, :end_date, :confirmed, :additional_info, :space_id, :user_id)
   end
 
