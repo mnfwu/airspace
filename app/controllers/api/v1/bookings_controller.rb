@@ -11,6 +11,9 @@ class Api::V1::BookingsController < Api::V1::BaseController
     end
   end
 
+  def update
+  end
+
   def destroy
     @booking.destroy
     head :no_content
