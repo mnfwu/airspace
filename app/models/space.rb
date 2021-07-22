@@ -7,4 +7,11 @@ class Space < ApplicationRecord
   validates :address, presence: true
   validates :category, presence: true
   validates :description, presence: true, length: { minimum: 5 }
+
+  include PgSearch::Model
+  pg_search_scope :space_search,
+    against: %i[title category city address title],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
