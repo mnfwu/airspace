@@ -1,5 +1,6 @@
 require 'faker'
 
+# users seed
 puts 'Creating Users'
 puts '--------------'
 20.times do
@@ -38,7 +39,10 @@ puts '---------------'
     'https://images.unsplash.com/photo-1559766569-d4a07c40fcce?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Z2FyZGVufHx8fHx8MTYyNjY3NjQzNA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
     'https://images.unsplash.com/photo-1532323544230-7191fd51bc1b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8aW50ZXJpb3J8fHx8fHwxNjI2Njc2NTE4&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
     'https://images.unsplash.com/photo-1574111249592-65c002336986?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjY2NzY1NjQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
-    'https://images.unsplash.com/photo-1562771335-b1fe8b4ea78f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjY2NzY1ODQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200'
+    'https://images.unsplash.com/photo-1562771335-b1fe8b4ea78f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjY2NzY1ODQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
+    'https://images.unsplash.com/photo-1581706295818-79604988926a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjY5MjA0MDY&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
+    'https://images.unsplash.com/photo-1607702307367-0a49cc6ad6bb?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjY5MjA0NTg&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
+    'https://images.unsplash.com/photo-1580927942227-c7748860b1b0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjY5MjA0ODU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200'
   ]
   space = Space.new(
     category: categories.sample,
@@ -55,5 +59,19 @@ puts '---------------'
 end
 puts '******end******'
 
-# reviews seed (don't need for now)
+# reviews seed
+puts 'Creating Reviews'
+puts '--------------'
+40.times do
+  review = Review.new(
+    user_id: rand(1..20),
+    space_id: rand(1..20),
+    content: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 3),
+    rating: rand(1..5)
+  )
+  review.save!
+  puts "Created review with rating #{review.rating}"
+end
+puts '******end******'
+
 # bookings seed (don't neeed for now)
