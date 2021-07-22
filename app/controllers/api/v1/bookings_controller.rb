@@ -16,6 +16,10 @@ class Api::V1::BookingsController < Api::V1::BaseController
     head :no_content
   end
 
+  def show_booking
+    @booking = Booking.find(params[:booking_id])
+  end
+
   def show_user_bookings
     @bookings = Booking.where("user_id = #{params[:user_id]}")
     @spaces = []
