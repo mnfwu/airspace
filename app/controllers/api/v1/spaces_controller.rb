@@ -3,13 +3,14 @@ class Api::V1::SpacesController < Api::V1::BaseController
 
   def index
     @spaces = Space.all
+    # if params[:query].present?
+    # @spaces =
   end
 
   def show; end
 
   def create
     @space = Space.new(space_params)
-    # @space.save
     if @space.save
       render json: @space
     else
