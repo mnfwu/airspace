@@ -52,7 +52,7 @@ puts '---------------'
     address: Faker::Address.street_address,
     title: Faker::Lorem.sentence(word_count: 2, supplemental: true, random_words_to_add: 4),
     description: Faker::Lorem.paragraph(sentence_count: 3, supplemental: true, random_sentences_to_add: 5),
-    user_id: User.all.sample
+    user_id: User.all.sample.id
   )
   space.save!
   puts "Created space #{space.title}"
@@ -64,8 +64,8 @@ puts 'Creating Reviews'
 puts '--------------'
 40.times do
   review = Review.new(
-    user_id: User.all.sample,
-    space_id: Space.all.sample,
+    user_id: User.all.sample.id,
+    space_id: Space.all.sample.id,
     content: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 3),
     rating: rand(1..5)
   )
