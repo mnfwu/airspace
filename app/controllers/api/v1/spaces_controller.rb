@@ -3,8 +3,7 @@ class Api::V1::SpacesController < Api::V1::BaseController
 
   def index
     @spaces = Space.all
-    # if params[:query].present?
-    # @spaces =
+    @spaces = Space.search(params[:query]) if params[:query].present?
   end
 
   def show; end
