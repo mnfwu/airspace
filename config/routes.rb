@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       get '/user', to: 'user#find_user'
       resources :spaces do
         resources :reviews, only: %i[create destroy]
-        resources :bookings, only: %i[create destroy]
+        resources :bookings, only: %i[create destroy update]
       end
       get '/space/:space_id/reviews', to: 'reviews#show_space_reviews', as: 'show_space_review'
       get '/spaces/user/:user_id', to: 'spaces#show_user_spaces', as: 'show_user_spaces'
