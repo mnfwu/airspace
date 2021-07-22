@@ -3,7 +3,6 @@ class Api::V1::ReviewsController < Api::V1::BaseController
 
   def create
     @review = Review.new(review_params)
-    # @review.save
     if @review.save
       render json: @review
     else
