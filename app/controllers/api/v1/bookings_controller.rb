@@ -1,5 +1,5 @@
 class Api::V1::BookingsController < Api::V1::BaseController
-  before_action :find_booking, only: [:destroy]
+  before_action :find_booking, only: [:destroy, :update]
 
   def create
     @booking = Booking.new(booking_params)
@@ -11,6 +11,11 @@ class Api::V1::BookingsController < Api::V1::BaseController
   end
 
   def update
+    if @booking.update(booking_params)
+      render :show
+    else
+      render_error
+    end
   end
 
   def destroy
@@ -33,7 +38,7 @@ class Api::V1::BookingsController < Api::V1::BaseController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :confirmed, :additional_info, :space_id, :user_id)
+    params.require(:booking).permit(:start_date, :end_date, :confirmed, :additional_info, :space_id, :user_id, :owner_response, :number_of_people)
   end
 
   def find_booking
