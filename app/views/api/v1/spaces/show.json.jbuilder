@@ -6,3 +6,11 @@ json.bookings do
 		json.user User.find(booking.user_id)
 	end
 end
+@reviews = Review.where("space_id = #{@space.id}")
+@average_rating = 0
+@reviews.each do |review|
+	@average_rating += review.rating
+end
+@reviews.length > 0 ? (@average_rating /= @reviews.length.to_f) : 0
+json.averagerating @average_rating
+json.reviews @reviews
