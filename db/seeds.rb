@@ -18,7 +18,7 @@ puts '******end******'
 # spaces seed
 puts 'Creating spaces'
 puts '---------------'
-30.times do
+40.times do
   categories = %w[work kitchen event]
   cities = %w[Shanghai Beijing Shenzhen Xiamen Ningbo Hangzhou Nanjing Chengdu Changsha Chongqing Shanghai Beijing Shanghai Beijing Shanghai Beijing Shenzhen Shenzhen Shanghai]
   prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
@@ -73,7 +73,7 @@ puts '******end******'
 # reviews seed
 puts 'Creating Reviews'
 puts '--------------'
-40.times do
+50.times do
   review = Review.new(
     user_id: User.all.sample.id,
     space_id: Space.all.sample.id,
