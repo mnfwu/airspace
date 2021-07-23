@@ -14,10 +14,4 @@ class Space < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
-
-  # pg_search_scope :search_by_category,
-  #   against: %i[category],
-  #   using: {
-  #     tsearch: { prefix: true } # <-- now `superman batm` will return something!
-  #   }
 end
