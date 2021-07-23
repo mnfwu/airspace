@@ -18,8 +18,9 @@ puts '******end******'
 # spaces seed
 puts 'Creating spaces'
 puts '---------------'
-20.times do
-  categories = ['office', 'kitchen', 'event space']
+30.times do
+  categories = %w[work kitchen event]
+  cities = %w[Shanghai Beijing Shenzhen Xiamen Ningbo Hangzhou Nanjing Chengdu Changsha Chongqing Shanghai Beijing Shanghai Beijing Shanghai Beijing Shenzhen Shenzhen Shanghai]
   prices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
   images = [
     'https://images.unsplash.com/photo-1592247350271-c5efb34dd967?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8aW50ZXJpb3J8fHx8fHwxNjI2Njc1OTY3&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
@@ -42,15 +43,25 @@ puts '---------------'
     'https://images.unsplash.com/photo-1562771335-b1fe8b4ea78f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjY2NzY1ODQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
     'https://images.unsplash.com/photo-1581706295818-79604988926a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjY5MjA0MDY&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
     'https://images.unsplash.com/photo-1607702307367-0a49cc6ad6bb?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjY5MjA0NTg&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
-    'https://images.unsplash.com/photo-1580927942227-c7748860b1b0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjY5MjA0ODU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200'
+    'https://images.unsplash.com/photo-1580927942227-c7748860b1b0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjY5MjA0ODU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
+    'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjcwMDQyODM&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
+    'https://images.unsplash.com/photo-1442975631115-c4f7b05b8a2c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjcwMDQzMTM&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
+    'https://images.unsplash.com/photo-1514933651103-005eec06c04b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjcwMDQzMzM&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
+    'https://images.unsplash.com/photo-1551887196-72e32bfc7bf3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjcwMDQzNTQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
+    'https://images.unsplash.com/photo-1485686531765-ba63b07845a7?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjcwMDQzOTM&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
+    'https://images.unsplash.com/photo-1549400405-810ac18d73b0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjcwMDQ0MDU&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
+    'https://images.unsplash.com/photo-1493857671505-72967e2e2760?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjcwMDQ0MjI&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
+    'https://images.unsplash.com/photo-1463797221720-6b07e6426c24?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjcwMDQ0MzY&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
+    'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8d29ya3NwYWNlfHx8fHx8MTYyNzAwNDQ3Mw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200',
+    'https://images.unsplash.com/photo-1509870449717-5609536a5393?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=675&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXx8fHx8fDE2MjcwMDQ1MjY&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200'
   ]
   space = Space.new(
     category: categories.sample,
     price: prices.sample,
     image_urls: [images.sample],
-    city: Faker::Address.city,
+    city: cities.sample,
     address: Faker::Address.street_address,
-    title: Faker::Lorem.sentence(word_count: 2, supplemental: true, random_words_to_add: 4),
+    title: Faker::Lorem.sentence(word_count: 2, supplemental: true, random_words_to_add: 3),
     description: Faker::Lorem.paragraph(sentence_count: 3, supplemental: true, random_sentences_to_add: 5),
     user_id: User.all.sample.id
   )
