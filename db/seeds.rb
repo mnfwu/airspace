@@ -3,7 +3,9 @@ require 'faker'
 # users seed
 puts 'Creating Users'
 puts '--------------'
-20.times do
+xun = User.new(username: 'xun', first_name: 'Xun', last_name: 'Ma', phone_number: '55555555555')
+xun.save!
+25.times do
   user = User.new(
     username: Faker::Creature::Animal.name,
     first_name: Faker::Name.first_name,
